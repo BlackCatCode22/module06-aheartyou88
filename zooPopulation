@@ -1,0 +1,69 @@
+
+A new animal is created: 4 year old female hyena, born in spring, tan color, 70 pounds, from Friguia Park, Tunisia
+Animal created: Hye-1 - 4 years old - Born on : 2020-03-01
+
+A new animal is created: 12 year old male hyena, born in fall, brown color, 150 pounds, from Friguia Park, Tunisia
+Animal created: Hye-2 - 12 years old - Born on : 2012-09-01
+
+A new animal is created: 4 year old male hyena, born in spring, black color, 120 pounds, from Friguia Park, Tunisia
+Animal created: Hye-3 - 4 years old - Born on : 2020-03-01
+
+A new animal is created: 8 year old female hyena, unknown birth season, black and tan striped color, 105 pounds, from Friguia Park, Tunisia
+Animal created: Hye-4 - 8 years old - Born on : 2016-01-01
+
+A new animal is created: 6 year old female lion, born in spring, tan color, 300 pounds, from Zanzibar, Tanzania
+Animal created: Lio-5 - 6 years old - Born on : 2018-03-01
+
+A new animal is created: 12 year old female lion, born in winter, dark tan color, 375 pounds, from KopeLion, Tanzania
+Animal created: Lio-6 - 12 years old - Born on : 2012-12-01
+
+A new animal is created: 22 year old male lion, born in fall, golden color, 450 pounds, from Zanzibar, Tanzania
+Animal created: Lio-7 - 22 years old - Born on : 2002-09-01
+
+A new animal is created: 4 year old female lion, born in spring, tan and brown color, 275 pounds, from KopeLion, Tanzania
+Animal created: Lio-8 - 4 years old - Born on : 2020-03-01
+
+A new animal is created: 2 year old male tiger, born in spring, gold and tan stripes color, 270 pounds, from Dhaka, Bangladesh
+Animal created: Tig-9 - 2 years old - Born on : 2022-03-01
+
+A new animal is created: 4 year old female tiger, born in spring, black stripes color, 400 pounds, from Dhaka, Bangladesh
+Animal created: Tig-10 - 4 years old - Born on : 2020-03-01
+
+A new animal is created: 18 year old male tiger, born in fall, gold and tan color, 300 pounds, from Bardia, Nepal
+Animal created: Tig-11 - 18 years old - Born on : 2006-09-01
+
+A new animal is created: 3 year old female tiger, born in spring, black stripes color, 285 pounds, from Bardia, Nepal
+Animal created: Tig-12 - 3 years old - Born on : 2021-03-01
+
+A new animal is created: 7 year old male bear, born in spring, brown color, 320 pounds, from Alaska Zoo, Alaska
+Animal created: Bea-13 - 7 years old - Born on : 2017-03-01
+
+A new animal is created: 25 year old female bear, born in spring, black color, 425 pounds, from Woodland park Zoo, Washington
+Animal created: Bea-14 - 25 years old - Born on : 1999-03-01
+
+A new animal is created: 4 year old female bear, born in fall, black color, 355 pounds, from Woodland park Zoo, Washington
+Animal created: Bea-15 - 4 years old - Born on : 2020-09-01
+
+A new animal is created: 4 year old male bear, born in spring, brown color, 405 pounds, from Alaska Zoo, Alaska
+Animal created: Bea-16 - 4 years old - Born on : 2020-03-01
+
+Total Number of Animals: 16
+Species Count: {bear=4, tiger=4, hyena=4, lion=4}
+
+All Animals:
+Hye-1 - 4 years old - Birthday: 2020-03-01- from Friguia Park
+Hye-2 - 12 years old - Birthday: 2012-09-01- from Friguia Park
+Hye-3 - 4 years old - Birthday: 2020-03-01- from Friguia Park
+Hye-4 - 8 years old - Birthday: 2016-01-01- from Friguia Park
+Lio-5 - 6 years old - Birthday: 2018-03-01- from Zanzibar
+Lio-6 - 12 years old - Birthday: 2012-12-01- from KopeLion
+Lio-7 - 22 years old - Birthday: 2002-09-01- from Zanzibar
+Lio-8 - 4 years old - Birthday: 2020-03-01- from KopeLion
+Tig-9 - 2 years old - Birthday: 2022-03-01- from Dhaka
+Tig-10 - 4 years old - Birthday: 2020-03-01- from Dhaka
+Tig-11 - 18 years old - Birthday: 2006-09-01- from Bardia
+Tig-12 - 3 years old - Birthday: 2021-03-01- from Bardia
+Bea-13 - 7 years old - Birthday: 2017-03-01- from Alaska Zoo
+Bea-14 - 25 years old - Birthday: 1999-03-01- from Woodland park Zoo
+Bea-15 - 4 years old - Birthday: 2020-09-01- from Woodland park Zoo
+Bea-16 - 4 years old - Birthday: 2020-03-01- from Alaska Zoo
