@@ -1,81 +1,86 @@
-//package aYouZookeepersChallenge;
+package aYouZookeepersChallenge;
 
+import java.util.UUID;
 import java.time.LocalDate;
+import java.time.Month;
 import java.time.format.DateTimeFormatter;
 import java.util.HashMap;
 import java.util.Map;
 
-abstract public class Animal {
+public abstract class Animal {
+    private final String id;
+    private final String species;
+    // Other fields and methods omitted for brevity
 
+    private static int nextId = 1;
 
-    private String animalName;
-    private int age;
-    private String gender;
-    private String species;
-    private String color;
-    private int weight;
-    private String birthPlace;
-    public LocalDate birthday; // Birthday derived from age and birth season
-
-
-    // Create a static attribute that belongs to the Animal class.
-    public static int numOfAnimals = 0;
-    // Map to derive the birth month from the season
-
-    // Method to get the complete species count map
-    public static Map<String, Integer> getAllSpeciesCount() {
-        return new HashMap<>(speciesCount);
+    private static String generateUniqueId(String species) {
+        String prefix = species.substring(0, 1).toUpperCase() + species.substring(1, 3).toLowerCase();
+        return prefix + "-" + nextId++;
     }
 
-    private static final Map<String, Integer> seasonToMonth = new HashMap<>();
+    public String getId() {
+        return id;
+    }
+    private static final Map<String, Month> SEASON_TO_MONTH = new HashMap<>();
+    private static final Map<String, Integer> SPECIES_COUNT = new HashMap<>();
 
     static {
-        seasonToMonth.put("spring", 3); // March
-        seasonToMonth.put("summer", 6); // June
-        seasonToMonth.put("autumn", 9);  // September
-        seasonToMonth.put("winter", 12); // December
+        SEASON_TO_MONTH.put("spring", Month.MARCH);
+        SEASON_TO_MONTH.put("summer", Month.JUNE);
+        SEASON_TO_MONTH.put("fall", Month.SEPTEMBER);
+        SEASON_TO_MONTH.put("autumn", Month.SEPTEMBER);
+        SEASON_TO_MONTH.put("winter", Month.DECEMBER);
     }
 
 
-    // Animal Class constructors
-    public Animal(int age, String gender, String species, String color, int weight, String birthPlace, String animalName) {
-        System.out.println("\n A new Animal object was created.\n");
+    private final int age;
+    private final String gender;
+    private final String color;
+    private final int weight;
+    private final String birthPlace;
+    private final LocalDate birthday;
 
-// Create initial values for the class attributes.
-        this.animalName = animalName;
+    public static int numOfAnimals = 0;
+
+    public Animal(String species, int age, String gender, String color, int weight, String birthPlace, LocalDate birthday) {
+        this.species = species;
         this.age = age;
         this.gender = gender;
-        this.species = species;
         this.color = color;
         this.weight = weight;
         this.birthPlace = birthPlace;
-//        this.birthday = birthday;
+        this.birthday = birthday;
+        this.id = generateUniqueId(species);
 
+        // Increment species count
+        SPECIES_COUNT.put(species, SPECIES_COUNT.getOrDefault(species, 0) + 1);
 
         numOfAnimals++;
-        speciesCount.put(species, speciesCount.getOrDefault(species, 0) + 1);
     }
-}
 
-    // Correct placement of method within class
-    public LocalDate genBirthday(int age, String birthSeason) { // Ensure proper method definition
-        int currentYear = LocalDate.now().getYear(); // Get current year
-        int birthYear = currentYear - age; // Calculate birth year
-        int birthMonth = seasonToMonth.getOrDefault(birthSeason.toLowerCase(), 1); // Default to January
-        return LocalDate.of(birthYear, birthMonth, 1); // Return birthdate
+    public static int getNumOfAnimals() {
+        return numOfAnimals;
     }
-public String getBirthday() {
-    return birthday.format(DateTimeFormatter.ISO_LOCAL_DATE); // Return ISO 8601 formatted date
-}
 
-public abstract String getID();
-
-
-
-// Public getter method for 'animalName'
-    public String getAnimalName() {
-        return animalName;
+    public static Map<String, Integer> getSpeciesCount() {
+        return new HashMap<>(SPECIES_COUNT);
     }
+
+    public static LocalDate genBirthday(int age, String birthSeason) {
+        int currentYear = LocalDate.now().getYear();
+        int birthYear = currentYear - age;
+        Month birthMonth = SEASON_TO_MONTH.getOrDefault(birthSeason.toLowerCase(), Month.JANUARY);
+        return LocalDate.of(birthYear, birthMonth, 1);
+    }
+
+    // Generate unique ID for each animal
+    public String getUniqueIdentifier() {
+        int speciesCount = SPECIES_COUNT.getOrDefault(species, 0);
+        return species + "_" + speciesCount;
+    }
+
+//    public abstract String getUniqueIdentifier();
 
     public int getAge() {
         return age;
@@ -101,58 +106,8 @@ public abstract String getID();
         return birthPlace;
     }
 
-
-
-// Derived classes for specific animals
-class Hyena extends Animal {
-    public Hyena(int age, String gender, String species, String color, int weight, String birthPlace, String animalName, LocalDate birthday) {
-        super(age, gender, species, color, weight, birthPlace, animalName);
-        System.out.println("Animal created: " + animalName + " - Birthday: " + birthday);
-    }
-
-
-//    @Override
-    public String getID() {
-        return "Hyena: " + animalName;
+    public String getBirthday() {
+        return birthday.format(DateTimeFormatter.ISO_LOCAL_DATE);
     }
 }
-    class Lion extends Animal {
-        public Lion(int age, String gender, String species, String color, int weight, String birthPlace, String animalName, LocalDate birthday) {
-            super(age, gender, species, color, weight, birthPlace, animalName);
-            System.out.println("Animal created: " + animalName + " - Birthday: " + birthday);
-        }
-
-
-//        @Override
-        public String getID() {
-            return "Lion: " + animalName;
-        }
-    }
-        class Bear extends Animal {
-            public Bear(int age, String gender, String species, String color, int weight, String birthPlace, String animalName, LocalDate birthday) {
-                super(age, gender, species, color, weight, birthPlace, animalName);
-                System.out.println("Animal created: " + animalName + " - Birthday: " + birthday);
-            }
-
-
-//            @Override
-            public String getID() {
-                return "Bear: " + animalName;
-            }
-}
-            class Tiger extends Animal {
-                public Tiger(int age, String gender, String species, String color, int weight, String birthPlace, String animalName, LocalDate birthday) {
-                    super(age, gender, species, color, weight, birthPlace, animalName);
-                    System.out.println("Animal created: " + animalName + " - Birthday: " + birthday);
-                }
-
-//                @Override
-                public String getID() {
-                    return "Tiger: " + animalName;
-                }
-            }
-
-
-
-
 
